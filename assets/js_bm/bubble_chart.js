@@ -20,8 +20,7 @@ setupButtons(); // Button Setup
 
 var myBubbleChart = bubbleChart();
 
-/* Funktion display ruft die Bubble-Chart Funktion auf und stellt sie im 
-vis div dar. Wird nach dem laden der Daten aus dem CSV gecallt. */
+/* Funktion display ruft die Bubble-Chart Funktion auf und stellt sie im #vis div dar. Wird nach dem laden der Daten aus dem CSV gecallt. */
 function display(error, data) {
   if (error) {
     console.log(error);
@@ -86,38 +85,38 @@ function bubbleChart() {
 // Erster Button: agecat (Alterskategorie)   
  
 var agecatCenters = { // Center locations of the bubbles.
-    1: { x: 150, y: height / 2 },
-    2: { x: 300, y: height / 2 },
-    3: { x: 470, y: height / 2 },
-    4: { x: 600, y: height / 2 },
-    5: { x: 750, y: height / 2 },
-    6: { x: 900, y: height / 2 }
+    1: { x: 100, y: height / 2 },
+    2: { x: 280, y: height / 2 },
+    3: { x: 450, y: height / 2 },
+    4: { x: 580, y: height / 2 },
+    5: { x: 720, y: height / 2 },
+    6: { x: 830, y: height / 2 }
   };
 
   var agecatTitleX = { // X locations of the year titles.
-    'Bis 14 Jahre': 100,
-    '14-15': 250,
-    '16-17': 450,
-    '18-19': 650,
-    '20-29': 800,
-    'Älter als 30 Jahre': 950
+    
+    '14 - 15 Jahre': 200,
+    '16 - 17 Jahre': 450,
+    '18 - 19 Jahre': 650,
+    '20 - 29 Jahre': 780,
+    'Älter als 30 Jahre': 920
   };
     
     
 // Zweiter Button: Geschlecht
     
   var sexCenters = { // Center locations of the bubbles. 
-    'Maennlich': { x: 220, y: height / 2  },
-    'Weiblich': { x: 420, y: height / 2  },
-    'Non-Binaer': { x: 600, y: height / 2  }
+    'Maennlich': { x: 250, y: height / 2  },
+    'Weiblich': { x: 500, y: height / 2  },
+    'Non-Binaer': { x: 750, y: height / 2  }
     
   };
 
   var sexTitleX = {  // X locations of the year titles.
-    'Männer': 150,
-    'Frauen': 450,
-    'Nichtbinär': 650,
-    'Keine Antwort': 850
+    'Männer': 170,
+    'Frauen': 530,
+    'Nichtbinär': 800,
+    
   };
 
 
@@ -167,6 +166,35 @@ var agecatCenters = { // Center locations of the bubbles.
     'Stimmt eher nicht': 70, 
     'Stimmt nicht': 70
   };  
+    
+    
+    // Fünfter Button: Nachttisch
+    
+    
+  var deskCenters = { // Center locations of the bubbles. 
+    '1': { x: 220, y: height / 2  },
+    '2': { x: 420, y: height / 2  },
+    '3': { x: 600, y: height / 2  },
+    '4': { x: 800, y: height / 2  }
+  
+  };
+
+  var deskTitleX = {  // X locations of the year titles.
+    '"Mein Smartphone liegt auch beim Schlafen immer in Griffweite"': 500,
+    'Ja': 150,
+    'Eher ja': 420, 
+    'Eher nein': 650, 
+    'Nein': 870
+  };
+    
+  var deskTitleY = {  // Y locations of the year titles.
+    '"Mein Smartphone liegt auch beim Schlafen immer in Griffweite"': 35, 
+    'Ja': 70,
+    'Eher ja': 70, 
+    'Eher nein': 70, 
+    'Nein': 70
+  };  
+    
     
     
     
@@ -237,7 +265,11 @@ var agecatCenters = { // Center locations of the bubbles.
         concern: d.sorgenkat,  
         concerntext: d.sorgen,
           
-        x: Math.random() * 900,
+        desk: d.nachttischcat,
+        desktext: d.nachttisch,
+          
+          
+          x: Math.random() * 900,
         y: Math.random() * 800
       };
     });
@@ -331,7 +363,8 @@ var agecatCenters = { // Center locations of the bubbles.
     hideAgecat();
     hideSex();
     hideScreentime();
-    hideConcern();  
+    hideConcern();
+    hideDesk();
     
     force.on('tick', function (e) {
       bubbles.each(moveToCenter(e.alpha))
@@ -373,6 +406,7 @@ Die Positionierung basiert auf dem alpha Parameter des force layouts und wird kl
     hideSex();
     hideConcern();
     hideScreentime();
+    hideDesk();
 
     force.on('tick', function (e) {
       bubbles.each(moveToAgecat(e.alpha))
@@ -420,6 +454,7 @@ function moveToAgecat(alpha) {
     hideAgecat();
     hideConcern();
     hideScreentime();
+    hideDesk();
 
     force.on('tick', function (e) {
       bubbles.each(moveToSex(e.alpha))
@@ -467,6 +502,7 @@ function moveToAgecat(alpha) {
     hideSex();
     hideAgecat();
     hideConcern();
+    hideDesk();
 
     force.on('tick', function (e) {
       bubbles.each(moveToScreentime(e.alpha))
@@ -515,6 +551,7 @@ function moveToAgecat(alpha) {
     hideSex();
     hideAgecat();
     hideScreentime();
+    hideDesk();
 
     force.on('tick', function (e) {
       bubbles.each(moveToConcern(e.alpha))
@@ -551,7 +588,53 @@ function moveToAgecat(alpha) {
       .text(function (d) { return d; });
     }
 
+    //* ------------------------------------------------------------------
+//
+// Nachttisch
+//
+// -----------------------------------------------------------------*/
+  function splitBubblesintoDesk() {
+    showDesk();
+    hideSex();
+    hideAgecat();
+    hideScreentime();
+    hideConcern();
     
+    force.on('tick', function (e) {
+      bubbles.each(moveToDesk(e.alpha))
+        .attr('cx', function (d) { return d.x; })
+        .attr('cy', function (d) { return d.y; });
+    });
+
+    force.start();
+  }
+
+  function moveToDesk(alpha) {
+    return function (d) {
+      var target = deskCenters[d.desk];
+      d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
+      d.y = d.y + (target.y - d.y) * damper * alpha * 1.1;
+    };
+  }
+
+  function hideDesk() {
+    svg.selectAll('.desk').remove();
+  }
+
+  function showDesk() {
+
+    var deskData = d3.keys(deskTitleX);
+    var desk = svg.selectAll('.desk')
+      .data(deskData);
+
+    desk.enter().append('text')
+      .attr('class', 'desk')
+      .attr('x', function (d) { return deskTitleX[d]; })
+      .attr('y', function (d) { return deskTitleY[d]; })
+      .attr('text-anchor', 'middle')
+      .text(function (d) { return d; });
+    }
+
 //* ------------------------------------------------------------------
 //
 // WISSENSCHAFTSWOCHE F
@@ -577,6 +660,8 @@ function moveToAgecat(alpha) {
       splitBubblesintoConcern();
     } else if (displayName === 'screentime') {
       splitBubblesintoScreentime();
+    } else if (displayName === 'desk') {
+      splitBubblesintoDesk();
     } else {
       groupBubbles();
     }
@@ -607,7 +692,7 @@ function moveToAgecat(alpha) {
 
   var fillColor = d3.scale.ordinal()
     .domain(['1','2','3', '4','5','6'])
-    .range(['#80ffdb', '#7400b8', '#f15bb5', '#fee440','#13315c','#ecbcfd']);
+    .range(['#F7CAD0', '#ADE8F4', '#48CAE4', '#0096C7','#023E8A','#03045E']);
 
   /* Tooltip-Funktion*/
   function showDetail(d) {
@@ -625,6 +710,9 @@ function moveToAgecat(alpha) {
                   '</span><br/>' +
                   '<span class="name">"Ich mache mir Sorgen um meine Daten": </span><span class="value">' +
                   d.concerntext +
+                  '</span>';
+                  '<span class="name">"Mein Smartphone liegt auch beim Schlafen immer in Griffweite": </span><span class="value">' +
+                  d.desktext +
                   '</span>';
     tooltip2.showtooltip2(content, d3.event);
   }

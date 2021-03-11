@@ -1,4 +1,4 @@
-﻿id,alter,kategoriealter,geschlecht,bsz,bszkat,bszkat2,sorgen,sorgenkat,verzicht,verzichtcat,preis,preiscat,nachttisch,nachttischcat,tagohnehandy,tagohnehandycat,facebook,facebcat,insta,instacat,schutzmechanismen,tutetwas,tutetwascat
+﻿id,alter,kategoriealter,geschlecht,bsz,bszkat,bszkat2,sorgen,sorgenkat,verzicht,verzicht-cat,preis,preis-cat,nachttisch,nachttisch-cat,tagohnehandy,tagohnehandy-cat,facebook,faceb-cat,insta,insta-cat,schutzmechanismen,tutetwas,tutetwas-cat
 4,30,6,Maennlich,2h-3h,3,9,Stimmt ganz,1, 20 CHF,1,Mehr als 20 CHF,5,Ja,1,Stimmt,1,Nein,4,eher Nein,3,1,Aktiv sicherer Messenger,1
 5,15,2,Maennlich,4h-5h,5,25,Stimmt gar nicht,4, 100 CHF,2,Mehr als 20 CHF,5,Nein,4,Stimmt eher ,2,eher Nein,3,eher Ja,2,1,Kein sichererer Messenger aber sonstige Schutzmassnahmen,2
 6,14,2,Maennlich,4h-5h,5,25,Stimmt eher,2, über  100 CHF,3,6-10 CHF,3,Ja,1,Stimmt nicht,4,Nein,4,Nein,4,0,Gar keine Massnahmen,3
@@ -116,11 +116,11 @@
 119,16,3,Maennlich,2h-3h,3,9,Stimmt eher nicht,3,50 CHF,1,11-20 CHF,4,Ja,1,Stimmt,1,eher Ja,2,eher Ja,2,0,Gar keine Massnahmen,3
 120,16,3,Weiblich,2h-3h,3,9,Stimmt eher nicht,3, über  100 CHF,3,3-5 CHF,2,eher Ja,2,Stimmt,1,eher Ja,2,eher Nein,3,0,Gar keine Massnahmen,3
 121,15,2,Weiblich,3h-4h,4,16,Stimmt eher nicht,3, 100 CHF,2,6-10 CHF,3,eher Ja,2,Stimmt eher ,2,eher Nein,3,eher Nein,3,1,Kein sichererer Messenger aber sonstige Schutzmassnahmen,2
-122,15,2,Maennlich,3h-4h,4,16,Stimmt eher,2, über  100 CHF,3,3-5 CHF,2,eher Ja,2,Stimmt eher nicht,3,eher Nein,3,eher Nein,3,1,Kein sichererer Messenger aber sonstige Schutzmassnahmen,2
+122,15,2,Non-Binaer,3h-4h,4,16,Stimmt eher,2, über  100 CHF,3,3-5 CHF,2,eher Ja,2,Stimmt eher nicht,3,eher Nein,3,eher Nein,3,1,Kein sichererer Messenger aber sonstige Schutzmassnahmen,2
 123,16,3,Maennlich,2h-3h,3,9,Stimmt eher,2,50 CHF,1,Ich würde auf die App verzichten,0,eher Ja,2,Stimmt eher ,2,Nein,4,eher Nein,3,1,Aktiv sicherer Messenger,1
 124,15,2,Weiblich,3h-4h,4,16,Stimmt eher,2,Würde ich auch gratis machen,0,Ich würde auf die App verzichten,0,Nein,4,Stimmt,1,Weiss nicht,0,eher Ja,2,0,Gar keine Massnahmen,3
 125,14,2,Weiblich,1h-2h,2,4,Stimmt eher nicht,3, 100 CHF,2,3-5 CHF,2,eher Nein,3,Stimmt,1,Weiss nicht,0,eher Ja,2,0,Gar keine Massnahmen,3
 126,15,2,Weiblich,Mehr als 5h,6,36,Stimmt gar nicht,4, über  100 CHF,3,11-20 CHF,4,eher Ja,2,Stimmt,1,Nein,4,eher Ja,2,0,Gar keine Massnahmen,3
-127,17,3,Maennlich,3h-4h,4,16,Stimmt eher nicht,3,Würde ich auch gratis machen,0,Ich würde auf die App verzichten,0,Nein,4,Stimmt,1,Nein,4,eher Nein,3,1,Kein sichererer Messenger aber sonstige Schutzmassnahmen,2
+127,17,3,Non-Binaer,3h-4h,4,16,Stimmt eher nicht,3,Würde ich auch gratis machen,0,Ich würde auf die App verzichten,0,Nein,4,Stimmt,1,Nein,4,eher Nein,3,1,Kein sichererer Messenger aber sonstige Schutzmassnahmen,2
 128,16,3,Weiblich,3h-4h,4,16,Stimmt eher nicht,3, über  100 CHF,3,Ich würde auf die App verzichten,0,Ja,1,Stimmt eher ,2,Weiss nicht,0,eher Nein,3,0,Aktiv sicherer Messenger,1
 129,14,2,Weiblich,3h-4h,4,16,Stimmt eher,2, über  100 CHF,3,Ich würde auf die App verzichten,0,Nein,4,Stimmt eher ,2,Weiss nicht,0,eher Nein,3,0,Gar keine Massnahmen,3
